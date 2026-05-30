@@ -52,14 +52,40 @@ int main(){
     //     cout<<endl;
     // }
 
-    int n=5;
-    for(int i=n;i>=1;i--){
-        char ch='A';
-        for(int j=0;j<i;j++){
-              cout<<ch;
-              ch++;
-        }
-        cout<<endl;
-    }
+    // int n=5;
+    // char ch='A';
+    // for(int i=0;i<n;i++){
+    //     for(int j=0;j<=i;j++){
+    //           cout<<ch;
+    //     }
+    //     ch++;
+    //     cout<<endl;
+    // }
+
+    // int n=5;
+    
+    // for(int i=0;i<n;i++){
+    //     char ch='A';
+    //     for(int j=0;j<=i;j++){
+    //         cout<<ch;
+    //         ch++;
+    //     }
+    //     ch--; 
+    //     for(int k=0;k<i;k++){
+    //         ch--;
+    //         cout<<ch;
+    //     }
+    //     cout<<endl;
+    // }
+
+    // int n=5;
+    // for(int i=0;i<=n-1;i++){
+    //     char ch='A'+n-i-1;
+    //     for(int j=0;j<=i;j++){
+    //         cout<<ch;
+    //         ch++;
+    //     }
+    //     cout<<endl;
+    // }
     return 0;
 }
