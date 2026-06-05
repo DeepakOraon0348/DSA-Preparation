@@ -153,8 +153,8 @@ int main()
             hash[s[i] - 'a']++;
         }
 
-        int q;
-        cin >> q;
+        int q=5;
+        // cin >> q;
         while (q--)
         {
             char c;
