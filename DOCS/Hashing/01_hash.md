@@ -69,3 +69,93 @@ int main() {
 ```
 ## Point to remember:
 We may encounter a problem where the maximum array element may be very large like 109. In that case, theoretically, we should declare an array of size 109+1. But we cannot do so. The maximum size of an array can be the following:
+
+```python
+class Car(models.Model):
+
+    TRANSMISSION_CHOICES = [
+        ('Manual', 'Manual'),
+        ('Automatic', 'Automatic'),
+    ]
+
+    FUEL_CHOICES = [
+        ('Petrol', 'Petrol'),
+        ('Diesel', 'Diesel'),
+        ('CNG', 'CNG'),
+        ('Electric', 'Electric'),
+        ('Hybrid', 'Hybrid'),
+    ]
+
+    STATUS_CHOICES = [
+        ('Available', 'Available'),
+        ('Booked', 'Booked'),
+        ('Maintenance', 'Maintenance'),
+    ]
+
+    vendor = models.ForeignKey(
+        VendorLogin,
+        on_delete=models.CASCADE,
+        related_name='cars'
+    )
+
+    # Basic Details
+    car_name = models.CharField(max_length=100)
+    brand = models.CharField(max_length=100)
+    model = models.CharField(max_length=100)
+    year = models.PositiveIntegerField()
+
+    # Location
+    city = models.CharField(max_length=100)
+    pickup_location = models.CharField(max_length=200)
+
+    # Pricing
+    rent_per_day = models.DecimalField(max_digits=10, decimal_places=2)
+
+    # Vehicle Details
+    fuel_type = models.CharField(
+        max_length=20,
+        choices=FUEL_CHOICES
+    )
+
+    transmission = models.CharField(
+        max_length=20,
+        choices=TRANSMISSION_CHOICES
+    )
+
+    seats = models.PositiveIntegerField()
+
+    mileage = models.PositiveIntegerField()
+
+    # Features
+    ac = models.BooleanField(default=True)
+    power_steering = models.BooleanField(default=True)
+    power_windows = models.BooleanField(default=True)
+    music_system = models.BooleanField(default=False)
+    airbags = models.BooleanField(default=True)
+    gps = models.BooleanField(default=False)
+
+    # Images
+    image = models.ImageField(
+        upload_to='cars/',
+        blank=True,
+        null=True
+    )
+
+    # Status
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default='Available'
+    )
+
+    description = models.TextField(
+        blank=True,
+        null=True
+    )
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.brand} {self.model}"
+
+```
