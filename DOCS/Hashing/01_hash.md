@@ -67,7 +67,9 @@ int main() {
     return 0;
 }
 ```
+
 ## Point to remember:
+
 We may encounter a problem where the maximum array element may be very large like 109. In that case, theoretically, we should declare an array of size 109+1. But we cannot do so. The maximum size of an array can be the following:
 
 ```python
@@ -158,4 +160,30 @@ class Car(models.Model):
     def __str__(self):
         return f"{self.brand} {self.model}"
 
+```
+
+```python
+<div id="car-cards" class="row mt-4">
+               <div class="col-md-4 col-sm-6 col-12 mb-4">
+        <div class="card h-100" onclick="viewDetails(${car.id})">
+            <img src="${car.image}" class="card-img-top" alt="${car.name}">
+
+            <div class="card-body">
+                <h5 class="card-title">${car.brand} ${car.name}</h5>
+
+                <div class="features">
+                    <span>⛽ ${car.fuel}</span>
+                    <span>👥 ${car.seats} Seats</span>
+                    <span>⚙️ ${car.transmission}</span>
+                    <span>❄️ ${car.ac ? "AC" : "Non-AC"}</span>
+                </div>
+
+                <div style="display:flex; justify-content:space-between; align-items:center; padding-top:10px;">
+                    <div>₹${car.price}/day</div>
+                    <button class="btn btn-primary view-btn" onclick="viewDetails(${car.id})"><a>View Detail</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+          </div>
 ```
