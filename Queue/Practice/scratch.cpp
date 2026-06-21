@@ -80,4 +80,6 @@ int main(){
       q.print();
       cout<< q.getSize()<<endl;
       q.getFront();
+      q.pop();
+      q.print();
 }
